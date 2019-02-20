@@ -51,7 +51,7 @@ template <size_t N, size_t B,class T = char>
 				v[i] = 0;
 			}
 			to_base(e);
-			cout << "Number" << "<" << N << "," << B << "," << ">" << "(" << e << ")." << endl;
+			//cout << "Number" << "<" << N << "," << B << "," << ">" << "(" << e << ")." << endl;
 			
 			
 		}
