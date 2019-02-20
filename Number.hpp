@@ -35,6 +35,7 @@ template <size_t N, size_t B,class T = char>
 			Number_t<N,B,T> operator /  (const Number_t<N,B,T>& n)const;
 			bool operator <  (const Number_t<N,B,T>& n)const;
 			bool operator ==  (const Number_t<N,B,T>& n)const;
+	
 		private:
 		
 			void to_base(int);
@@ -50,7 +51,7 @@ template <size_t N, size_t B,class T = char>
 				v[i] = 0;
 			}
 			to_base(e);
-			//cout << "Number" << "<" << N << "," << B << "," << ">" << "(" << e << ")." << endl;
+			cout << "Number" << "<" << N << "," << B << "," << ">" << "(" << e << ")." << endl;
 			
 			
 		}
@@ -105,6 +106,7 @@ template <size_t N, size_t B,class T = char>
 			return n1;
 		}
 		
+		
 		template <size_t N, size_t B,class T>
 		ostream& Number_t<N,B,T>::write(ostream& os)const
 		{
@@ -119,21 +121,6 @@ template <size_t N, size_t B,class T = char>
 				
 			}
 		}
-//~###############################################################################//
-//                            MÉTODOS PRIVADOS                                    //
-//~##############################################################################//
-        template <size_t N, size_t B,class T>
-        void Number_t<N,B,T>::to_base(int e){
-        	int cociente,residuo,cont;
-			int i = 0;
-			do{
-			        cociente = e/B;
-			        residuo = e%B;
-			        set_v(i,residuo);
-			        e = cociente;
-			        i++;
-			}while (cociente>0);
-		} 
 		
 		
 		template <size_t N, size_t B,class T>
@@ -164,6 +151,7 @@ template <size_t N, size_t B,class T = char>
 			
 		}
 		
+		
 		template <size_t N, size_t B,class T>
 		Number_t<N,B,T> Number_t<N,B,T>::operator *  (const Number_t<N,B,T>& n)const
 		{
@@ -177,6 +165,7 @@ template <size_t N, size_t B,class T = char>
 			
 		}
 		
+		
 		template <size_t N, size_t B,class T>
 		Number_t<N,B,T> Number_t<N,B,T>::operator /  (const Number_t<N,B,T>& n)const
 		{
@@ -189,6 +178,7 @@ template <size_t N, size_t B,class T = char>
 			return resultado;
 			
 		}
+		
 		
 		template <size_t N, size_t B,class T>
 		bool Number_t<N,B,T>::operator <  (const Number_t<N,B,T>& n)const
@@ -226,4 +216,22 @@ template <size_t N, size_t B,class T = char>
 			return Number_t<N,B,T>(n.to_decimal());
 			
 		}
+		
+//~###############################################################################//
+//                            MÉTODOS PRIVADOS                                    //
+//~##############################################################################//
+        template <size_t N, size_t B,class T>
+        void Number_t<N,B,T>::to_base(int e){
+        	int cociente,residuo,cont;
+			int i = 0;
+			do{
+			        cociente = e/B;
+			        residuo = e%B;
+			        set_v(i,residuo);
+			        e = cociente;
+			        i++;
+			}while (cociente>0);
+		} 
+		
+		
 		

@@ -10,8 +10,8 @@
 
 CXX = g++
 CFLAGS = -g -Wall -O2
-SRC = main.cpp Number.cpp Number.hpp 
-OBJ = main.o Number.o 
+SRC = main.cpp  Number.hpp 
+OBJ = main.o 
 
 
 # Reglas expl�citas
@@ -23,7 +23,7 @@ clean:
 	$(RM) $(OBJ) main
 
 # Reglas impl�citas
-Number.o: Number.cpp Number.hpp
+#Number.o: Number.cpp Number.hpp
 main.o: main.cpp Number.hpp 
 
 run: main.o  

@@ -12,6 +12,8 @@ using namespace std;
 
 int main () {
     
+    cout << "***************************" << endl;
+    cout << "PLANTILLA DE CLASE NUMBER_T" << endl;
     Number_t<10,16,int>  n(243);
     n.write(cout);
     cout << endl;
@@ -20,4 +22,5 @@ int main () {
     cout << endl;
     Number_t<10,16,int>  n2;
     n2 = n + n1;
+    cout << endl;
 }
