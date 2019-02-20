@@ -23,4 +23,5 @@ int main () {
     Number_t<10,16,int>  n2;
     n2 = n + n1;
     cout << endl;
+    cout << "***************************" << endl;
 }
